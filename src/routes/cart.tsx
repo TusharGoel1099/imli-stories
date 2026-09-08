@@ -113,7 +113,7 @@ function CartPage() {
             </div>
           </dl>
           <a
-            href={`https://wa.me/919873804717?text=${encodeURIComponent(
+            href={`https://wa.me/919873564717?text=${encodeURIComponent(
               `Hi Ritu Fashion Store! I'd like to order: ${lines
                 .map((l) => `${getProduct(l.slug)?.name} (${l.size}) x${l.qty}`)
                 .join(", ")}. Total ${formatINR(subtotal + shipping)}.`,
