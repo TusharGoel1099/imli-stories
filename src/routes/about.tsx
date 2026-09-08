@@ -56,7 +56,7 @@ function About() {
         <div className="mt-12 rounded-2xl border border-border p-6">
           <h2 className="font-display text-xl font-bold">Come say hello</h2>
           <p className="mt-2 text-muted-foreground">
-            Sadar Bazaar, Gurgaon, Haryana 122001 · Open Monday to Saturday, 11am to 8:30pm.
+            157/13, Sadar Bazar Rd, Roshan Pura, Gurugram, Haryana 122007 · Open Monday to Sunday, 10am to 9pm.
           </p>
           <Link
             to="/contact"

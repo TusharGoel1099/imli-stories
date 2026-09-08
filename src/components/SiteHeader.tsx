@@ -17,7 +17,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50">
       <div className="bg-primary px-4 py-2 text-center text-xs font-semibold tracking-wide text-primary-foreground sm:text-sm">
-        FREE SHIPPING ON PREPAID ORDERS | CALL US 98738 04717
+        FREE SHIPPING ON PREPAID ORDERS | CALL US 98735 64717
       </div>
 
       <div className="border-b border-border bg-background/95 backdrop-blur">
