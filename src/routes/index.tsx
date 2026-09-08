@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Heart, Leaf, Truck } from "lucide-react";
+import { ArrowRight, Clock, Heart, Leaf, MapPin, MessageCircle, Phone, Star, Truck } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { ProductCard } from "@/components/ProductCard";
 import { categories, products } from "@/lib/products";
@@ -133,6 +133,129 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section className="overflow-hidden py-16">
+        <h2 className="px-4 text-center font-display text-3xl font-extrabold sm:text-4xl">What Our Customers Say</h2>
+        <div className="mt-10 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+          <div className="flex w-max animate-[marquee-ltr_45s_linear_infinite] gap-6 hover:[animation-play-state:paused]">
+            {[...reviews, ...reviews].map((r, i) => (
+              <figure
+                key={`${r.name}-${i}`}
+                className="w-80 shrink-0 rounded-2xl border border-border bg-card p-6"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent font-display text-lg font-bold text-primary">
+                    {r.name[0]}
+                  </span>
+                  <div className="min-w-0">
+                    <figcaption className="truncate font-semibold">{r.name}</figcaption>
+                    <p className="text-xs text-muted-foreground">{r.when}</p>
+                  </div>
+                </div>
+                <div className="mt-3 flex gap-0.5" aria-label={`${r.rating} out of 5 stars`}>
+                  {Array.from({ length: 5 }, (_, s) => (
+                    <Star
+                      key={s}
+                      className={`h-4 w-4 ${s < r.rating ? "fill-amber-400 text-amber-400" : "text-border"}`}
+                    />
+                  ))}
+                </div>
+                <blockquote className="mt-3 text-sm text-muted-foreground">"{r.text}"</blockquote>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-3xl font-extrabold text-primary-foreground sm:text-4xl">
+              Questions while you shop? Just reach out
+            </h2>
+            <p className="mt-3 text-primary-foreground/85">
+              Need help with sizing, an order, or a custom festive outfit? Call or WhatsApp us any time — and if you're
+              in Gurgaon, drop by our family store in Sadar Bazar and see the fabrics in person.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            <div className="rounded-2xl bg-card p-6">
+              <Phone className="h-6 w-6 text-primary" />
+              <p className="mt-3 font-semibold">Call or WhatsApp</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Quick answers on products, sizes and delivery while you shop online.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a
+                  href="tel:+919873564717"
+                  className="rounded-full border border-border px-5 py-2.5 text-sm font-bold hover:border-primary"
+                >
+                  +91 98735 64717
+                </a>
+                <a
+                  href="https://wa.me/919873564717"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground"
+                >
+                  <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+            <div className="rounded-2xl bg-card p-6">
+              <MapPin className="h-6 w-6 text-primary" />
+              <p className="mt-3 font-semibold">Visit our store in Gurgaon</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                157/13, Sadar Bazar Rd, near Subzi Mandi Road, Holi Ground, Roshan Pura, Gurugram, Haryana 122007
+              </p>
+              <p className="mt-3 flex items-center gap-1.5 text-sm text-muted-foreground">
+                <Clock className="h-4 w-4 text-primary" /> Open Mon – Sun, 10:00 AM – 9:00 PM
+              </p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=157%2F13%20Sadar%20Bazar%20Rd%20Roshan%20Pura%20Gurugram%20Haryana%20122007"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-bold hover:border-primary"
+              >
+                Get directions <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
+const reviews = [
+  {
+    name: "Indresh Girohtra",
+    when: "6 years ago",
+    rating: 4,
+    text: "Goods available is very good and staff behavior is nice with costomer.",
+  },
+  {
+    name: "Tamanna Yadav",
+    when: "6 years ago",
+    rating: 5,
+    text: "Best prize with best quality clothes provided. With latest collection.",
+  },
+  {
+    name: "Anjali Gupta",
+    when: "3 weeks ago",
+    rating: 4,
+    text: "We bought party wear for my son's birthday. The fabric is soft and the fit was perfect.",
+  },
+  {
+    name: "Pooja Sharma",
+    when: "2 months ago",
+    rating: 5,
+    text: "Ordered a cotton co-ord set on WhatsApp and it arrived in two days. Lovely quality for the price.",
+  },
+  {
+    name: "Rahul Verma",
+    when: "1 month ago",
+    rating: 5,
+    text: "A proper family store — they helped us pick matching festive outfits for both kids.",
+  },
+];

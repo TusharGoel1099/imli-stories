@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/contact")({
@@ -28,9 +28,15 @@ function Contact() {
       <div className="mt-10 grid gap-10 md:grid-cols-2">
         <div className="space-y-5">
           {[
-            { icon: Phone, title: "Call us", body: "+91 98738 04717", href: "tel:+919873804717" },
-            { icon: MessageCircle, title: "WhatsApp", body: "Chat with our team", href: "https://wa.me/919873804717" },
-            { icon: MapPin, title: "Visit the store", body: "Sadar Bazaar, Gurgaon, Haryana 122001" },
+            { icon: Phone, title: "Call us", body: "+91 98735 64717", href: "tel:+919873564717" },
+            { icon: MessageCircle, title: "WhatsApp", body: "Chat with our team", href: "https://wa.me/919873564717" },
+            {
+              icon: MapPin,
+              title: "Visit the store",
+              body: "157/13, Sadar Bazar Rd, near Subzi Mandi Road, Holi Ground, Roshan Pura, Gurugram, Haryana 122007",
+              href: "https://www.google.com/maps/search/?api=1&query=157%2F13%20Sadar%20Bazar%20Rd%20Roshan%20Pura%20Gurugram%20Haryana%20122007",
+            },
+            { icon: Clock, title: "Store timings", body: "Mon – Sun: 10:00 AM – 9:00 PM" },
             { icon: Instagram, title: "Instagram", body: "@ritufashionstore" },
           ].map(({ icon: Icon, title, body, href }) => (
             <div key={title} className="flex gap-3 rounded-2xl bg-secondary p-5">
